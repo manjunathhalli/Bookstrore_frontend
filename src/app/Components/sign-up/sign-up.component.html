@@ -1,0 +1,115 @@
+<div class="Block " fxLayout="row" >
+    <mat-card class="mat1">
+
+        <div>
+            <img class="img" src="../../assets/Book/component.png" alt="cart lady">
+        </div>
+
+        <div class="text">
+            ONLINE BOOK SHOPPING
+        </div>
+    </mat-card>
+
+    <mat-card class="mat2">
+        <div fxLayout="row">
+            <div class="login" routerLink="/login">
+                <P>LOGIN</P>
+            </div>
+            <div class="signup">
+                <p>SIGNUP</p>
+            </div>
+        </div>
+
+        <form [formGroup]="signupForm">
+            <div class="form-fields">
+                <div class="role">
+                    <div>
+                        <mat-label>Role</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input type="text" formControlName="role" matInput placeholder="">
+                            <mat-error>Enter Role</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="first_name">
+                    <div>
+                        <mat-label>First Name</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input type="text" formControlName="first_name" matInput placeholder="">
+                            <mat-error>Enter First name</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="last_name">
+                    <div>
+                        <mat-label>Last Name</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input type="text" formControlName="last_name" matInput placeholder="">
+                            <mat-error>Enter an lastname</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="phone_no">
+                    <div>
+                        <mat-label>phone Number</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+
+                            <input type="text" formControlName="phone_no" matInput placeholder="">
+                            <mat-error>Enter a phone number</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="email">
+                    <div>
+                        <mat-label>Email Id</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input type="text" formControlName="email" matInput placeholder="">
+                            <mat-error>Enter an email</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="password">
+                    <div>
+                        <mat-label>Password</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input type="password" formControlName="password" matInput placeholder="">
+                            <mat-error>Enter a password</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="confirm_password">
+                    <div>
+                        <mat-label>Confirm Password</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input type="password" formControlName="confirm_password" matInput placeholder="">
+                            <mat-error>Enter a confirm password</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <button mat-button class="signupbutton" (click)="onSubmit()">Signup</button>
+            </div>
+
+        </form>
+    </mat-card>
+</div>
