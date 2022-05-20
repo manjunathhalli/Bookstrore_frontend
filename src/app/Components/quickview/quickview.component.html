@@ -1,0 +1,60 @@
+<div class="mainheader" fxLayout="column">
+    <div style="width: 80%;">
+        <div style="width: 100%; margin-top: 2%;">
+            <span style="color:gray;">Home/</span><span> Books({{book?.quantity}}) </span>
+        </div>
+        <div class="header">
+            <div class="Books">
+                <div class="smallimages">
+                    <div class="small1">
+                        <img class="img1" src="{{book?.image}}" alt="">
+                    </div>
+                    <div class="small2">
+                        <img class="img2" src="../../assets/Book/small book.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="maincontent" fxLayout="column" fxLayoutAlign="none center">
+                <div class="image" fxLayoutAlign="center center">
+                    <img src="{{book?.image}}" alt="bookImage">
+                </div>
+
+                <button class="btn">ADD TO BAG</button>
+                <button class="btn2">
+                    <mat-icon id="fav-icons">favorite</mat-icon>WHISH LIST
+                </button>
+
+            </div>
+            <div class="bookdetails">
+                <div class="bookname">
+                    {{book?.name}}
+                </div>
+                <div class="author">
+                    by {{book?.author}}
+                </div>
+                <div class="rating" fxLayoutAlign="space-evenly center">
+                    4.5<img class="Star" src="../../assets/Book/star_outline_white_24dp (1).svg" alt="">
+                </div>
+                <p id="count">(15)</p>
+                <div class="price" fxLayout="row">
+                    <div class="discountprice">
+                        Rs.100
+                        <!-- {{book?.discountPrice}} -->
+                    </div>
+                    <div class="originalprice">
+                        <del>Rs.{{book?.price}} </del>
+                    </div>
+                </div>
+                <div class="para">
+                    <span class="booktitle">Book Detail</span>
+                    <p class="bookparagraph">
+                        {{book?.description}}
+                    </p>
+                </div>
+                <div class="feedback">
+                    <p>Customer Feedback</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -44,9 +44,9 @@ export class SignUpComponent implements OnInit {
       this.userService.signUpUser(reqdata).subscribe((response: any) => {
         console.log(response);
         console.log("Registration successful", response);
-        // (response.status == true); {
-        //   this.router.navigateByUrl('/login');
-        // }
+        (response.status == true); {
+          this.router.navigateByUrl('/login');
+        }
       })
     }
   }

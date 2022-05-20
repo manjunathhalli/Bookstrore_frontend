@@ -8,7 +8,7 @@
     background-color: white;
     height: 60%;
     width: 24%;
-    right: -24%;
+    right: -15%;
     top: 10%;
     border-radius: 25px;
     display: flex;
@@ -43,11 +43,11 @@
 .mat2 {
     background-color: white;
     height: 800px;
-    width: 350px;
+    width: 500px;
     display: flex;
     position: relative;
-    margin-left: 45%;
-    top: -60%;
+    margin-left: 12%;
+    top: 5%;
     padding: 13px;
 }
 
@@ -61,23 +61,31 @@
     font-size: 20px;
     font-weight: 500;
     color: gray;
-      cursor: pointer;
+    cursor: pointer;
 
 }
 
 .signup {
-
-    margin-top: -616%;
-    margin-bottom: 360px;
-    display: flex;
+    margin-top: 15px;
+    margin-bottom: 480px;
     position: relative;
-    left: 224px;
-    bottom: 60px;
+    left: 320px;
     font-family: Roboto, sans-serif;
     font-size: 20px;
     font-weight: 500;
     color: gray;
-      cursor: pointer;
+    cursor: pointer;
+    // margin-top: -616%;
+    // margin-bottom: 360px;
+    // display: flex;
+    // position: relative;
+    // left: 224px;
+    // bottom: 60px;
+    // font-family: Roboto, sans-serif;
+    // font-size: 20px;
+    // font-weight: 500;
+    // color: gray;
+    //   cursor: pointer;
 
 }
 
@@ -98,9 +106,11 @@
     height: 18%;
 
 }
-.email{
+
+.email {
     height: 18%;
 }
+
 .password {
 
     height: 18%;
@@ -118,4 +128,4 @@
     border-color: brown;
     color: white;
     position: relative;
-} 
+}

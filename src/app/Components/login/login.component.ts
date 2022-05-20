@@ -32,7 +32,8 @@ export class LoginComponent implements OnInit {
       }
       this.userService.loginUser(reqdata).subscribe((response: any) => {
         console.log(response);
-      //  console.log("Login successful", response);
+        //  console.log("Login successful", response);
+        this.router.navigateByUrl('/dashboard')
         localStorage.setItem("BookStore", response.access_token);
       },
         (error: any) => {

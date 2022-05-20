@@ -42,11 +42,11 @@
 .mat2 {
     background-color: white;
     height: 500px;
-    width: 350px;
+    width: 450px;
     display: flex;
     position: relative;
-    margin-left: 45%;
-    top: -47%;
+    margin-left: 20%;
+    top: 5%;
     padding: 13px;
 }
 
@@ -67,17 +67,25 @@
 }
 
 .signup {
-    margin-top: -630%;
-    margin-bottom: 360px;
-    display: flex;
+    margin-top: 15px;
+    margin-bottom: 490px;
     position: relative;
-    left: 224px;
-    bottom: 60px;
+    left: 270px;
     font-family: Roboto, sans-serif;
     font-size: 20px;
     font-weight: 500;
     color: gray;
-    cursor: pointer;
+    // margin-top: -630%;
+    // margin-bottom: 360px;
+    // display: flex;
+    // position: relative;
+    // left: 224px;
+    // bottom: 60px;
+    // font-family: Roboto, sans-serif;
+    // font-size: 20px;
+    // font-weight: 500;
+    // color: gray;
+    // cursor: pointer;
 
 }
 

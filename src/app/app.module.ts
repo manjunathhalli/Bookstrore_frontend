@@ -6,14 +6,19 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule ,FormsModule} from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { GetAllBookComponent } from './Components/get-all-book/get-all-book.component';
+import { QuickviewComponent } from './Components/quickview/quickview.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +26,9 @@ import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassw
     SignUpComponent,
     LoginComponent,
     ForgotpasswordComponent,
+    DashboardComponent,
+    GetAllBookComponent,
+    QuickviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,9 @@ import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassw
     FormsModule,
     HttpClientModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule,
+    FlexLayoutModule,
 
   ],
   providers: [],

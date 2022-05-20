@@ -1,0 +1,47 @@
+<div>
+    <div class="bookCount">
+        <span class="books">Books <p id="book-count"></p></span>
+        <span class="count"></span>
+    </div>
+    <div class="sort">
+        <mat-form-field appearance="outline">
+            <mat-label>Sort by relevance</mat-label>
+            <mat-select class="matselect">
+                <mat-option>Price:Low to High</mat-option>
+                <mat-option>Price:High to Low</mat-option>
+                <mat-option>Newest Arrivals</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="bookcard">
+        <div class="entirebook" *ngFor="let Book of booksArray">
+            <div class="bookimg">
+                <img class="img1" src="{{Book.image}}"  (click)="quickview(Book)">
+            </div>
+            <h2 class="title">{{Book.name}}</h2>
+            <p id="para">by {{Book.author}}</p>
+            <div class="rating" fxLayoutAlign="space-evenly center">
+                4.5<img class="Star" src=".../../assets/Book/star_outline_white_24dp.svg" alt="">
+            </div>
+
+            <p id="count">(15)</p>
+            <!-- <p id="count">{{Book.quantity}}</p> -->
+            <div class="price-container">
+                <div class="dicounted-price">
+                    <!-- <b>{{Book.price}}</b> -->
+                    <b>Rs.100</b>
+                </div>
+                <div class="actual-price">
+                    Rs.{{Book.price}}
+                    <!-- Rs.500 -->
+                </div>
+
+                <button mat-raised-button class="add-btn">ADD TO BAG</button>
+                <button class="btn2">
+                    <mat-icon id="fav-icons">favorite</mat-icon>WHISH LIST
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
