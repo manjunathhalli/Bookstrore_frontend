@@ -1,0 +1,62 @@
+<!-- <div class="main">
+        <span class="home" routerLink="/dashboard/getallbook">Home /</span>
+     </div> -->
+<!-- </div>  -->
+<mat-expansion-panel class="panel1" hideToggle>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            My Cart({{cartquantity}})
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="section">
+        <div fxLayout="row" fxLayoutAlign="center center">
+
+            <div fxLayout="column" fxLayoutGap="5px">
+                <div class="cartbook" fxLayout="row" fxLayout="start center" *ngFor="let book of bookSArray">
+                    <div>
+                        <div class="image" fxLayoutAlign="start center">
+                            <img class="bookImage" src="./assets/Book/book1.png">
+                        </div>
+                    </div>
+
+                    <div class="entirebook" fxLayout="column" fxLayout.sm="column">
+                        <div class="bookname">
+                            {{book.name}}
+                        </div>
+                        <div class="author">
+                            by {{book.author}}
+                        </div>
+                        <div class="price" fxLayout="row" fxLayoutGap="10px">
+                            <div class="discountprice">
+                                Rs.100
+                            </div>
+                            <div class="originalprice">
+                                <del> Rs.{{book.Price}}</del>
+                            </div>
+                        </div>
+
+                        <div class="quantity" fxLayout="row" fxLayoutAlign="space-evenly center">
+                            <img class="circle" src=".../../assets/Book/remove_circle_outline_black_24dp.svg">
+                            <span class="bookquantity">1</span>
+                            <img class="circle" src=".../../assets/Book/add_circle_outline_black_24dp.svg">
+                            <span class="remove" (click)="removeCart(Book)">Remove</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rightdiv" fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="80%">
+                <div class="location" fxLayoutAlign="center center">
+                    <mat-icon class="placeIcon">place</mat-icon>
+                    <span class="currentlocation">Use Current Location</span>
+                </div>
+                <div>
+                    <button mat-flat-button class="button" color="primary">Place Order
+
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-expansion-panel>

@@ -6,13 +6,15 @@ import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetAllBookComponent } from './Components/get-all-book/get-all-book.component';
 import { QuickviewComponent } from './Components/quickview/quickview.component';
+import { GetcartComponent } from './Components/getcart/getcart.component';
+
 const routes: Routes = [
   { path: 'signUp', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forgot', component: ForgotpasswordComponent },
   // { path: 'getallbook', component: GetAllBookComponent },
   // {path:'dashboard',component:DashboardComponent}
-
+  { path: 'getcart', component: GetcartComponent },
   {
     path: 'dashboard', component: DashboardComponent,
     children: [

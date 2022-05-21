@@ -9,7 +9,10 @@ import { BookService } from 'src/app/Services/bookService/book.service';
 export class GetAllBookComponent implements OnInit {
   booksArray: any = [];
 
-  constructor(private httpGetAllBook: BookService, private router: Router, private activatedroute: ActivatedRoute) { }
+  Book: any;
+  booksquantity:any;
+
+  constructor(private bookService: BookService, private router: Router, private activatedroute: ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -17,11 +20,18 @@ export class GetAllBookComponent implements OnInit {
   }
 
   getAllBook() {
-    this.httpGetAllBook.usergetallbooks().subscribe((response: any) => {
+    this.bookService.usergetallbooks().subscribe((response: any) => {
       console.log(response);
+      this.booksquantity = response.books.length;
       this.booksArray = response.books;
       console.log(this.booksArray);
     });
+  }
+
+  AddToBag(Book: any) {
+    this.bookService.addToBag(Book.id).subscribe((response: any) => {
+      console.log('book add to Bag ', response)
+    })
   }
 
   quickview(Book: any) {

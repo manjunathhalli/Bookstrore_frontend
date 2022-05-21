@@ -1,7 +1,8 @@
 <div>
     <div class="bookCount">
-        <span class="books">Books <p id="book-count"></p></span>
-        <span class="count"></span>
+        <span class="books">Books <span class="count">({{booksquantity}} items)</span>
+            <p id="book-count"></p>
+        </span>
     </div>
     <div class="sort">
         <mat-form-field appearance="outline">
@@ -17,7 +18,7 @@
     <div class="bookcard">
         <div class="entirebook" *ngFor="let Book of booksArray">
             <div class="bookimg">
-                <img class="img1" src="{{Book.image}}"  (click)="quickview(Book)">
+                <img class="img1" src="{{Book.image}}" (click)="quickview(Book)">
             </div>
             <h2 class="title">{{Book.name}}</h2>
             <p id="para">by {{Book.author}}</p>
@@ -37,7 +38,7 @@
                     <!-- Rs.500 -->
                 </div>
 
-                <button mat-raised-button class="add-btn">ADD TO BAG</button>
+                <button mat-raised-button class="add-btn" (click)="AddToBag(Book)">ADD TO BAG</button>
                 <button class="btn2">
                     <mat-icon id="fav-icons">favorite</mat-icon>WHISH LIST
                 </button>
