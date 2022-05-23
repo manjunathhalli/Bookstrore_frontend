@@ -54,7 +54,7 @@ export class BookService {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + this.token
       }),
-      body: { id: id }
+     body: { id: id }
     }
     return this.httpService.deleteService("/deleteBookByCartId", true, header)
   }

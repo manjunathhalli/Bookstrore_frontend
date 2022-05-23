@@ -23,6 +23,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetAllBookComponent } from './Components/get-all-book/get-all-book.component';
 import { QuickviewComponent } from './Components/quickview/quickview.component';
 import { GetcartComponent } from './Components/getcart/getcart.component';
+import { OrderplacedComponent } from './Components/orderplaced/orderplaced.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { GetcartComponent } from './Components/getcart/getcart.component';
     GetAllBookComponent,
     QuickviewComponent,
     GetcartComponent,
+    OrderplacedComponent,
   ],
   imports: [
     BrowserModule,

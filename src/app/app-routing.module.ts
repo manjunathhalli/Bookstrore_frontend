@@ -7,6 +7,9 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetAllBookComponent } from './Components/get-all-book/get-all-book.component';
 import { QuickviewComponent } from './Components/quickview/quickview.component';
 import { GetcartComponent } from './Components/getcart/getcart.component';
+import { AuthGuard } from './shared/auth.guard';
+import { AuthService } from './shared/auth.service';
+import { OrderplacedComponent } from './Components/orderplaced/orderplaced.component';
 
 const routes: Routes = [
   { path: 'signUp', component: SignUpComponent },
@@ -14,13 +17,16 @@ const routes: Routes = [
   { path: 'forgot', component: ForgotpasswordComponent },
   // { path: 'getallbook', component: GetAllBookComponent },
   // {path:'dashboard',component:DashboardComponent}
-  { path: 'getcart', component: GetcartComponent },
+  // { path: 'getcart', component: GetcartComponent },
+  { path: 'orderplaced', component:OrderplacedComponent},
   {
-    path: 'dashboard', component: DashboardComponent,
+    path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard],
     children: [
-      { path: '', redirectTo: 'getallbook', pathMatch: 'full', },
+      { path: '', redirectTo: '/dashboard/getallbook', pathMatch: 'full', },
       { path: 'getallbook', component: GetAllBookComponent },
-      { path: 'quickview/:bookId', component: QuickviewComponent }
+      { path: 'quickview/:bookId', component: QuickviewComponent },
+      { path: 'getcart', component: GetcartComponent },
+      { path: 'orderplaced', component:OrderplacedComponent},
     ]
   },
 

@@ -31,6 +31,7 @@ export class GetAllBookComponent implements OnInit {
   AddToBag(Book: any) {
     this.bookService.addToBag(Book.id).subscribe((response: any) => {
       console.log('book add to Bag ', response)
+      this.router.navigateByUrl('./getcart')
     })
   }
 

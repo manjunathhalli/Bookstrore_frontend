@@ -11,7 +11,7 @@
     color: white;
 }
 
-.img-Icon{
+.img-Icon {
     padding-left: 64%;
     padding-right: 10%;
     padding-top: 3%;
@@ -34,13 +34,16 @@
     font-style: normal;
     color: dimgrey;
 }
-.mat-card>:first-child, .mat-card-content>:first-child {
+
+.mat-card>:first-child,
+.mat-card-content>:first-child {
     margin-top: 0px;
     display: contents;
     color: gray;
 
 }
-.Profile{
+
+.Profile {
     display: flex;
     flex-direction: column-reverse;
     background: brown;
@@ -48,13 +51,17 @@
     color: white;
     border: transparent;
     padding-left: 7%;
+    cursor: pointer;
 }
-.cart{
+
+.cart {
     display: flex;
     flex-direction: column-reverse;
     background: brown;
     border-color: brown;
     color: white;
     border: transparent;
-    padding-left: 5%;
-} 
+    padding-left: -5%;
+    padding-right: 15%;
+    cursor: pointer;
+}

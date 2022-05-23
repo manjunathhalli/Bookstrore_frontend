@@ -7,9 +7,12 @@ import { HttpService } from '../httpService/http.service';
   providedIn: 'root'
 })
 export class UserService {
-
-  constructor(private httpService: HttpService) { }
-
+  header: any = "";
+  token: any
+  constructor(private httpService: HttpService) {
+    this.token = localStorage.getItem('BookStore')
+  }
+  user = localStorage.getItem('BookStore')
   signUpUser(reqdata: any) {
     const params = {
       role: reqdata.role,
@@ -30,6 +33,26 @@ export class UserService {
       password: reqdata.password
     }
     return this.httpService.post(`${environment.baseUrl}/login`, params);
+  }
+
+  AddressService(reqdata: any) {
+    let headers = {
+      address: reqdata.address,
+      city: reqdata.city,
+      state: reqdata.state,
+      landmark: reqdata.landmark,
+      pincode: reqdata.pincode,
+      address_type: reqdata.address_type
+    }
+    console.log(this.user);
+    this.getToken();
+    return this.httpService.post(`${environment.baseUrl}/addAddress`, headers, true, this.header);
+  }
+
+  getToken() {
+    this.header = {
+      headers: { Authorization: "Bearer " + this.user }
+    }
   }
 }
 
