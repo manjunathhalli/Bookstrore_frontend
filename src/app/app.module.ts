@@ -15,6 +15,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDividerModule} from '@angular/material/divider'
 import {MatRadioModule} from '@angular/material/radio';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -24,6 +26,7 @@ import { GetAllBookComponent } from './Components/get-all-book/get-all-book.comp
 import { QuickviewComponent } from './Components/quickview/quickview.component';
 import { GetcartComponent } from './Components/getcart/getcart.component';
 import { OrderplacedComponent } from './Components/orderplaced/orderplaced.component';
+import { FilterPipe } from './pipes/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { OrderplacedComponent } from './Components/orderplaced/orderplaced.compo
     QuickviewComponent,
     GetcartComponent,
     OrderplacedComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,7 @@ import { OrderplacedComponent } from './Components/orderplaced/orderplaced.compo
     MatExpansionModule,
     MatDividerModule,
     MatRadioModule,
+    NgxPaginationModule,
 
   ],
   providers: [],

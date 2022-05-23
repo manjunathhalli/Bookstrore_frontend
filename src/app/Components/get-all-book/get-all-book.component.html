@@ -8,15 +8,18 @@
         <mat-form-field appearance="outline">
             <mat-label>Sort by relevance</mat-label>
             <mat-select class="matselect">
-                <mat-option>Price:Low to High</mat-option>
-                <mat-option>Price:High to Low</mat-option>
-                <mat-option>Newest Arrivals</mat-option>
+                <mat-option (click)="lowtohigh()" value="one">Price:Low to High</mat-option>
+                <mat-option (click)=" hightolow()" value="two">Price:High to Low</mat-option>
+                <mat-option (click)="newestarrivals()" value="third">Newest Arrivals</mat-option>
             </mat-select>
         </mat-form-field>
     </div>
 
-    <div class="bookcard">
-        <div class="entirebook" *ngFor="let Book of booksArray">
+    <div class="bookcard">,
+        <div class="entirebook" *ngFor="let Book of booksArray| filter: searchBook |
+            paginate: { itemsPerPage: 3, 
+            currentPage: page,
+            totalItems:totalLength }">
             <div class="bookimg">
                 <img class="img1" src="{{Book.image}}" (click)="quickview(Book)">
             </div>
@@ -45,4 +48,7 @@
             </div>
         </div>
     </div>
+    <div class="pagination" fxLayoutAlign="center center">
+    <pagination-controls  class="text-center my-pagination"  (pageChange)="page = $event"></pagination-controls>
+</div>
 </div>

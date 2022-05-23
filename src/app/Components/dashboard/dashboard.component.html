@@ -9,7 +9,7 @@
             <button mat-icon-button>
                 <mat-icon class="searchIcon">search</mat-icon>
             </button>
-            <input class="searchInput" type="text" name="search" placeholder="Search.." />
+            <input class="searchInput" type="text" name="search" placeholder="Search.." (keyup)="search($event)" />
         </mat-card>
 
         <button class="Profile" mat-button>Profile <mat-icon class="searchIcon">perm_identity</mat-icon></button>
