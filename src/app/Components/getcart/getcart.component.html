@@ -1,7 +1,6 @@
-<!-- <div class="main">
-        <span class="home" routerLink="/dashboard/getallbook">Home /</span>
-     </div> -->
-<!-- </div>  -->
+<div class="main">
+    <span class="home" routerLink="/dashboard/getallbook">Home/MyCart</span>
+</div>
 <mat-expansion-panel class="panel1" hideToggle>
     <mat-expansion-panel-header>
         <mat-panel-title>
@@ -151,17 +150,17 @@
                 </div>
                 <div class="details" fxLayout="row" fxLayoutAlign="space-between center">
                     <div class="state">
-                <div>
-                    <mat-label class="names">Address Type</mat-label>
-                </div>
-                <div>
-                    <mat-form-field appearance="outline">
-                        <input matInput type="text" formControlName="address_type" placeholder="">
-                        <mat-error>Enter Address Type</mat-error>
-                    </mat-form-field>   <span class="dot"></span> Home   <span class="dot"></span> work 
-                       <span class="dot"></span> Other
-                </div>
-            </div>
+                        <div>
+                            <mat-label class="names">Address Type</mat-label>
+                        </div>
+                        <div>
+                            <mat-form-field appearance="outline">
+                                <input matInput type="text" formControlName="address_type" placeholder="">
+                                <mat-error>Enter Address Type</mat-error>
+                            </mat-form-field> <span class="dot"></span> Home <span class="dot"></span> work
+                            <span class="dot"></span> Other
+                        </div>
+                    </div>
                 </div>
                 <!-- <div fxLayout="column" fxLayoutGap="7px">
                     <span class="type">Type</span>
@@ -183,5 +182,51 @@
                 </div>
             </div>
         </form>
+    </div>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            Order Summary
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="section">
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayout="column" fxLayoutGap="20px">
+                <div class="cartbook" fxLayout="row" fxLayout="start center" *ngFor="let book of bookSArray">
+                    <div>
+                        <div class="image" fxLayoutAlign="start center">
+                            <img class="bookImage" src="./assets/Book/book1.png">
+                        </div>
+                    </div>
+
+                    <div class="entirebook" fxLayout="column" fxLayout.sm="column">
+                        <div class="bookname">
+                            {{book.name}}
+                        </div>
+                        <div class="author">
+                            by {{book.author}}
+                        </div>
+                        <div class="price" fxLayout="row" fxLayoutGap="10px">
+                            <div class="discountprice">
+                                Rs. 100
+                            </div>
+                            <div class="originalprice">
+                                <del> Rs.{{book.Price}}</del>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rightdiv" fxLayout="column" fxLayoutAlign="space-between center">
+                <div>
+                    <button mat-flat-button class="checkoutbutton" (click)=" ordersummary()"
+                        color="primary">Checkout</button>
+                </div>
+            </div>
+        </div>
     </div>
 </mat-expansion-panel>

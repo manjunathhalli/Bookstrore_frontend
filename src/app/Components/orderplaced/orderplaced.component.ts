@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orderplaced.component.scss']
 })
 export class OrderplacedComponent implements OnInit {
-
+  OrderId : any;
   constructor() { }
 
   ngOnInit(): void {
+    this.OrderId = localStorage.getItem('OrderId');
+    console.log("OrderId");
+    console.log(this.OrderId);
   }
+
 
 }

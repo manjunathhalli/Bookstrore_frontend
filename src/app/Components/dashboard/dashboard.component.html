@@ -1,19 +1,40 @@
 <div class="container">
     <mat-toolbar class="tool" fxLayout="row" fxLayoutAlign="space-between center">
-        <div class="titleText" fxLayout="row" fxLayoutGap="2%">
+        <div class="titleText" fxLayout="row" fxFlex.xs="5px">
             <img src="../../assets/Book/icon(1).png" class="img-Icon" />
             <a id="text">BookStore</a>
         </div>
 
-        <mat-card class="search" fxLayout="row" fxLayoutAlign="space-around center">
+        <mat-card class="search" fxLayout="row" fxLayoutAlign="space-between center">
             <button mat-icon-button>
                 <mat-icon class="searchIcon">search</mat-icon>
             </button>
             <input class="searchInput" type="text" name="search" placeholder="Search.." (keyup)="search($event)" />
         </mat-card>
 
-        <button class="Profile" mat-button>Profile <mat-icon class="searchIcon">perm_identity</mat-icon></button>
-        <button class="cart" mat-button routerLink="./getcart">Cart<mat-icon>shopping_cart</mat-icon></button>
+        <button class="Profile" mat-button [matMenuTriggerFor]="menu">Manju <mat-icon class="searchIcon">perm_identity
+            </mat-icon>
+
+            <mat-menu class="matmenu" #menu="matMenu">
+                <div fxLayout="column" fxLayoutGap="3px" style="width: 200px;">
+                    <h3 class="greet">Hii Manjunath,</h3>
+                </div>
+
+
+                <button class="wishlistbutton" mat-menu-item fxLayoutAlign.sm="end center">
+                    <mat-icon class="wishlistIcon">favorite</mat-icon>MY WISHLIST
+                </button>
+
+                <div style="margin-top: 10px;" mat-menu-item fxLayoutGap="0px">
+                    <button (click)="signOut()" class="logoutbutton">Logout</button>
+                </div>
+            </mat-menu>
+        </button>
+
+        <div fxLayout="row" fxLayoutAlign=" " fxLayoutAlign.sm="end center">
+            <button class="cart" mat-button routerLink="./getcart">Cart<mat-icon>shopping_cart</mat-icon></button>
+        </div>
+
     </mat-toolbar>
     <div>
         <router-outlet></router-outlet>

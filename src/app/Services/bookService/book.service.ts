@@ -1,16 +1,18 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpService } from '../httpService/http.service';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
   token: any;
-
+  header: any = "";
   constructor(private httpService: HttpService) {
     this.token = localStorage.getItem('BookStore')
   }
 
+  user=localStorage.getItem('BookStore')
   usergetallbooks() {
     this.token = localStorage.getItem('BookStore')
     console.log("inside getall book service");
@@ -54,8 +56,31 @@ export class BookService {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + this.token
       }),
-     body: { id: id }
+      body: { id: id }
     }
     return this.httpService.deleteService("/deleteBookByCartId", true, header)
+  }
+
+
+  //place order 
+  checkOut(reqData: any) {
+    console.log(reqData)
+    let headers = {
+      address_id: reqData.orders.address_id,
+      name: reqData.orders.name,
+      quantity: reqData.orders.quantity
+    }
+    
+    //   console.log(this.user);
+    this.getToken();
+    return this.httpService.post(`${environment.baseUrl}/placeOrder`, headers, true, this.header);
+  }
+
+
+
+  getToken() {
+    this.header = {
+      headers: { Authorization: "Bearer " + this.user }
+    }
   }
 }

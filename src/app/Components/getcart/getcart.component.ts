@@ -11,10 +11,15 @@ import { UserService } from 'src/app/Services/userServices/user.service';
 })
 export class GetcartComponent implements OnInit {
 
+  orderList: any = [];
   bookSArray: any = [];
+
   Book: any;
+  AddreesArray: any = [];
 
   cartquantity: any;
+  address: any;
+  OrderId: any;
 
   customerForm!: FormGroup;
   submitted = false;
@@ -42,14 +47,13 @@ export class GetcartComponent implements OnInit {
         state: this.customerForm.value.state,
         landmark: this.customerForm.value.landmark,
         pincode: this.customerForm.value.pincode,
-       // address_type: "home",
-       address_type: this.customerForm.value.address_type,
+        // address_type: "home",
+        address_type: this.customerForm.value.address_type,
       }
       this.user.AddressService(reqData).subscribe((response: any) => {
         console.log(response);
+        this.AddreesArray = response.address;
         console.log('inside the USER SERVICE')
-       // localStorage.setItem('Address_Id',response)
-
       })
     }
   }
@@ -63,10 +67,40 @@ export class GetcartComponent implements OnInit {
 
     });
   }
-  removeCart(Book:any) {
+
+  ordersummary() {
+    let orders: Array<any> = []
+    for (this.Book of this.bookSArray) {
+
+      let order = {
+        "address_id": this.Book.id,
+        "name": this.Book.name,
+        "quantity": this.Book.book_quantity,
+      }
+
+      orders.push(order)
+
+      let reqData = {
+        orders: orders[0]
+      }
+
+      console.log(reqData)
+
+      this.bookservice.checkOut(reqData).subscribe((response: any) => {
+        console.log(response);
+        this.OrderId = response.OrderId;
+        console.log(this.OrderId);
+        localStorage.setItem('OrderId', this.OrderId)
+
+        this.router.navigateByUrl("/dashboard/orderplaced")
+      })
+    }
+  }
+
+  removeCart(Book: any) {
+    console.log(Book);
     this.bookservice.removecartitem(Book.id).subscribe((response: any) => {
       console.log('Remove Cart Item successfully', response);
     })
   }
-
 }

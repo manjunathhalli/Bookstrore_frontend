@@ -53,6 +53,28 @@
     padding-left: 7%;
     cursor: pointer;
 }
+.logoutbutton {
+    height: 50%;
+    width: 65%;
+    margin-left: 27px;
+    border-color: rgb(83, 80, 80);
+    color: rgb(245, 240, 240);
+    cursor: pointer;
+    background: rgb(148, 34, 34);
+}
+
+
+.wishlistIcon {
+    color: brown;
+}
+
+.wishlistbutton {
+    margin-top: 1px;
+}
+.greet {
+    margin-left: 40px;
+}
+
 
 .cart {
     display: flex;

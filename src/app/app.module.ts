@@ -16,7 +16,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDividerModule} from '@angular/material/divider'
 import {MatRadioModule} from '@angular/material/radio';
 import {NgxPaginationModule} from 'ngx-pagination';
-
+import {MatMenuModule} from '@angular/material/menu';
 
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -58,6 +58,7 @@ import { FilterPipe } from './pipes/pipes/filter.pipe';
     MatDividerModule,
     MatRadioModule,
     NgxPaginationModule,
+    MatMenuModule,
 
   ],
   providers: [],

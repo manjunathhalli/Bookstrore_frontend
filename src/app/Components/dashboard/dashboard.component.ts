@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/Services/DataService/data.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,7 +9,7 @@ import { DataService } from 'src/app/Services/DataService/data.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private data: DataService) { }
+  constructor(private data: DataService,private router: Router,) { }
 
   ngOnInit(): void {
   }
@@ -15,5 +17,10 @@ export class DashboardComponent implements OnInit {
     console.log(event.target.value)
     // this.data.updateSearch(event.target.value);
     this.data.outgoingData(event.target.value)
+  }
+
+  signOut() {
+    localStorage.removeItem("BookStore");
+    this.router.navigateByUrl('/login');
   }
 }

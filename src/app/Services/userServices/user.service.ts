@@ -10,7 +10,7 @@ export class UserService {
   header: any = "";
   token: any
   constructor(private httpService: HttpService) {
-    this.token = localStorage.getItem('BookStore')
+   // this.token = localStorage.getItem('BookStore')
   }
   user = localStorage.getItem('BookStore')
   signUpUser(reqdata: any) {
@@ -36,6 +36,7 @@ export class UserService {
   }
 
   AddressService(reqdata: any) {
+  //  console.log(reqdata)
     let headers = {
       address: reqdata.address,
       city: reqdata.city,
